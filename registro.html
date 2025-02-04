@@ -172,72 +172,77 @@
               <div class="card-body px-5 pb-5">
                 <div class="align-items-center mb-0">
                   <div class="text-container">
-                   
+                    <!-- Inicio Form-->
                     <form action="procesar_formulario.php" method="POST">
-                      <!-- Nombre -->
-                        <div class="d-flex justify-content-between"> 
-                        <div class="mb-3">
-                          <label for="name" class="form-label">Nombre del video</label>
-                          <input type="text" class="form-control" id="name" name="name" placeholder="Ingresa tu nombre" required>
-                        </div>
-
-                        <div class="mb-3">
-                          <label for="name" class="form-label">Tiempo de duración inicial en minutos</label>
-                          <input type="text" class="form-control" id="name" name="name" placeholder="Ingresa tu nombre" required>
-                        </div>
-
-                      <!-- Fecha -->
-                      <div class="mb-3">
-                        <label for="date" class="form-label">Fecha inicial</label>
-                        <input type="date" class="form-control" id="date" name="date" required>
+                        <div class="d-flex justify-content-between">
+                          <!-- Nombre --> 
+                          <div class="mb-3">
+                            <label for="name" class="form-label">Nombre del video</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Ingresa tu nombre" required>
+                          </div>
+                          <!-- Tiempo --> 
+                          <div class="mb-3">
+                            <label for="name" class="form-label">Tiempo de duración (segundos) </label>
+                            <select class="form-control" id="name" name="name" placeholder="selecciona duración" required>
+                              <option value="value1" selected>10</option>
+                              <option value="value2">15</option>
+                              <option value="value3">20</option>
+                              <option value="value3">25</option>
+                              <option value="value3">30</option>
+                              <option value="value3">40</option>
+                              <option value="value3">60</option>
+                            </select>
+                          </div>
+                          <!-- Fecha -->
+                          <div class="mb-3">
+                            <label for="date" class="form-label">Fecha inicial</label>
+                            <input type="date" class="form-control" id="date" name="date" required>
+                          </div>
+                          <!-- Fecha -->
+                          <div class="mb-3">
+                            <label for="date" class="form-label">Fecha final</label>
+                            <input type="date" class="form-control" id="date" name="date" required>
+                          </div>
                       </div>
 
-                        <!-- Fecha -->
-                        <div class="mb-3">
-                          <label for="date" class="form-label">Fecha final</label>
-                          <input type="date" class="form-control" id="date" name="date" required>
-                        </div>
-
-                        <!-- Subir archivo -->
-                       
+                      <div class="d-flex justify-content-between">
+                          <div class="col-md-3">
+                              <label class="form-label">Veces por día</label>
+                              <input type="number" class="form-control" min="1">
+                          </div>
+                          <div class="col-md-3">
+                              <label class="form-label">Total de publicaciones</label>
+                              <input type="number" class="form-control" min="1" readonly>
+                          </div>
+                         <!-- Subir archivo -->
+                          <div class="col-md-5 ">
+                            <label for="file" class="form-label">Subir video</label>
+                            <input type="file" class="form-control" id="file" name="file" required>
+                          </div>
                       </div>
-
-                      <div class="row mt-3 d-flex justify-content-between">
-                        <div class="col-md-6">
-                            <label class="form-label">Veces por día</label>
-                            <input type="number" class="form-control" min="1">
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label">Total de publicaciones</label>
-                            <input type="number" class="form-control" min="1">
-                        </div>
-                        
+                                         
+                      <div class="d-flex justify-content-between"> 
+                        <div class="col-md-12">
+                          <label for="name" class="form-label">Comentarios:</label>
+                          <textarea class="form-control" rows="3" id="name" name="name" placeholder="Ingresa los comentarios que consideres necesarios" required>
+                            </textarea>
+                          </div>                 
                       </div>
-                      </div>
-
-                      <div class="d-flex"> 
-                        <div class="mb-3">
-                          <label for="file" class="form-label">Subir video</label>
-                          <input type="file" class="form-control" id="file" name="file" required>
-                        </div>
-
-                        <div class="mb-9">
-                          <label for="name" class="form-label">Comentarios</label>
-                          <input type="textarea" class="form-control" id="name" name="name" placeholder="Ingresa los comentarios que consideres necesarios" required>
-                        </div>                       
-                      </div>
-
+                      <br>
+                      <div class="col-md-3">
+                        <label class="form-label"><h6> Es urgente/prioridad</h6></label>
+                        <input type="checkbox"  id="scales" name="scales"> 
+                      </div> 
+                      
                       <div class="d-flex justify-content-center gap-2"> 
                           <!-- Botón de envío -->
                           <button type="submit" class="btn btn-primary btn-sm">Enviar</button> 
                           <button type="button" class="btn btn-danger btn-sm">Cancelar</button>
                       </div>
                     </form>
-                    
-
-                  </div>
-                </div>
-              </div>
+                  </div> <!-- Fin container-->
+                </div> <!-- Fin align-items-center-->
+              </div> <!-- Fin card-body -->
             </div>
           </div>
         </div>
@@ -253,7 +258,7 @@
                   <script>
                     document.write(new Date().getFullYear());
                   </script>
-                  . Todos los derechos reservados <i class="fa fa-heart"></i>
+                  . Todos los derechos reservados 
                   <a
                     href="https://los40cuernavaca.com/"
                     class="font-weight-bold"

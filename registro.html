@@ -173,7 +173,7 @@
                 <div class="align-items-center mb-0">
                   <div class="text-container">
                     <!-- Inicio Form-->
-                    <form action="procesar_formulario.php" method="POST">
+                    <form autocomplete="off" action="src/php/registrar.php" method="post" id="myForm" accept-charset="utf-8" enctype="multipart/form-data">
                         <div class="d-flex justify-content-between">
                           <!-- Nombre --> 
                           <div class="mb-3">
@@ -205,7 +205,7 @@
                           <!-- Fecha -->
                           <div class="mb-3">
                             <label for="date" class="form-label">Fecha final</label>
-                            <input type="date" class="form-control" id="fechaFinal" name="FechaFinal" required>
+                            <input type="date" class="form-control" id="fechaFinal" name="fechaFinal" required>
                           </div>
                       </div>
 
@@ -216,13 +216,13 @@
                           </div>
                           <div class="col-md-3">
                             <label class="form-label">Selecciona excluir dias en caso de ser necesario</label><br>
-                            <label class="form-label"> <input type="checkbox" name="dias" value="Lunes" />    Lunes </label>
-                            <label class="form-label"> <input type="checkbox" name="dias" value="Martes" />   Martes </label>
-                            <label class="form-label"> <input type="checkbox" name="dias" value="Miercoles"/> Miércoles </label>
-                            <label class="form-label"> <input type="checkbox" name="dias" value="Jueves" />   Jueves </label>
-                            <label class="form-label"> <input type="checkbox" name="dias" value="Viernes" />  Viernes </label>
-                            <label class="form-label"> <input type="checkbox" name="dias" value="Sabado" />   Sábado </label>
-                            <label class="form-label"> <input type="checkbox" name="dias" value="Domingo" />  Domingo </label>
+                            <label class="form-label"> <input type="checkbox" name="dias[]" value="Lunes" />    Lunes </label>
+                            <label class="form-label"> <input type="checkbox" name="dias[]" value="Martes" />   Martes </label>
+                            <label class="form-label"> <input type="checkbox" name="dias[]" value="Miercoles"/> Miércoles </label>
+                            <label class="form-label"> <input type="checkbox" name="dias[]" value="Jueves" />   Jueves </label>
+                            <label class="form-label"> <input type="checkbox" name="dias[]" value="Viernes" />  Viernes </label>
+                            <label class="form-label"> <input type="checkbox" name="dias[]" value="Sabado" />   Sábado </label>
+                            <label class="form-label"> <input type="checkbox" name="dias[]" value="Domingo" />  Domingo </label>
                           </div>
                           <div class="col-md-1">
                               <label class="form-label">Total de publicaciones</label>

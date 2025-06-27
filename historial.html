@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Historial de Publicidad</title>
+
+  <!-- Estilos existentes -->
+  <link href="assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="assets/css/nucleo-svg.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,900" rel="stylesheet" />
+  <link href="assets/css/material-dashboard.css?v=3.2.0" rel="stylesheet" />
+
+  <!-- DataTables CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
+</head>
+<body class="g-sidenav-show bg-gray-100">
+
+<main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
+  <div class="container-fluid py-4">
+    <div class="card">
+      <div class="card-header bg-gradient-dark text-white">
+        <h5 class="mb-0">Historial de Publicidad</h5>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table id="tablaHistorial" class="display responsive nowrap" style="width:100%">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Cliente</th>
+                <th>Video</th>
+                <th>Duración</th>
+                <th>Fecha Inicial</th>
+                <th>Fecha Final</th>
+                <th>VxDía</th>
+                <th>Días Excluidos</th>
+                <th>Total Publicaciones</th>
+                <th>Ruta Video</th>
+                <th>Comentarios</th>
+                <th>Urgente</th>
+                <th>Fecha Registro</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- JS Core -->
+<script src="assets/js/core/popper.min.js"></script>
+<script src="assets/js/core/bootstrap.min.js"></script>
+<script src="assets/js/plugins/perfect-scrollbar.min.js"></script>
+<script src="assets/js/material-dashboard.min.js?v=3.2.0"></script>
+
+<!-- DataTables JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+
+<!-- Inicialización de DataTable -->
+<script>
+  $(document).ready(function () {
+    $('#tablaHistorial').DataTable({
+      responsive: true,
+      ajax: '/srpradio/src/php/get_historial.php',
+      columns: [
+        { data: 'id_promocionales' },
+        { data: 'nombre_cliente_empresa' },
+        { data: 'nombre_video' },
+        { data: 'tiempo_duracion_seg' },
+        { data: 'fecha_inicial' },
+        { data: 'fecha_final' },
+        { data: 'veces_x_dia' },
+        { data: 'dias_excluidos' },
+        { data: 'total_publicaciones' },
+        { data: 'ruta_video' },
+        { data: 'comentarios' },
+        { data: 'es_urgente', render: data => data == 1 ? 'Sí' : 'No' },
+        { data: 'fecha_registro' }
+      ],
+      language: {
+        url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json'
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

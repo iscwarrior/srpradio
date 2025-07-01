@@ -127,20 +127,24 @@
   </div>
 </nav>
 <!-- End Navbar -->  
+  <form method="GET" action="/src/php/exportar_xml.php">
   <div class="container-fluid py-4">
     <div class="card">
       <div class="card-header bg-gradient-dark text-white">
-        <h5 class="mb-0">Exportar archivo xml </h5>
+        <h5 class="mb-0">Exportar archivo XML</h5>
       </div>
       <div class="card-body">
         <div class="table-responsive">
-            <div> <label for="start">Selecciona el dia para generar achivo:</label> 
-                  <input type="date" id="start" name="trip-start" value="2020-01-01" min="1990-01-01" max="2999-12-31" /> </div>
-            <button class="btn-primary"> Descargar</button>
+          <div>
+            <label for="start">Selecciona el día para generar archivo:</label>
+            <input type="date" id="start" name="trip-start" value="2020-01-01" min="1990-01-01" max="2999-12-31" />
+          </div>
+          <button type="submit" class="btn btn-primary mt-3">Descargar</button>
         </div>
       </div>
     </div>
   </div>
+</form>
 </main>
 
 <!-- JS Core -->

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="es">
 <head>
    <meta charset="utf-8" />
@@ -130,29 +130,13 @@
   <div class="container-fluid py-4">
     <div class="card">
       <div class="card-header bg-gradient-dark text-white">
-        <h5 class="mb-0">Historial de Publicidad</h5>
+        <h5 class="mb-0">Exportar archivo xml </h5>
       </div>
       <div class="card-body">
         <div class="table-responsive">
-          <table id="tablaHistorial" class="display responsive nowrap" style="width:100%">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Cliente</th>
-                <th>Video</th>
-                <th>Duración</th>
-                <th>Fecha Inicial</th>
-                <th>Fecha Final</th>
-                <th>VxDía</th>
-                <th>Días Excluidos</th>
-                <th>Total Publicaciones</th>
-                <th>Ruta Video</th>
-                <th>Comentarios</th>
-                <th>Urgente</th>
-                <th>Fecha Registro</th>
-              </tr>
-            </thead>
-          </table>
+            <div> <label for="start">Selecciona el dia para generar achivo:</label> 
+                  <input type="date" id="start" name="trip-start" value="2020-01-01" min="1990-01-01" max="2999-12-31" /> </div>
+            <button class="btn-primary"> Descargar</button>
         </div>
       </div>
     </div>
@@ -169,34 +153,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
-
-<!-- Inicialización de DataTable -->
-<script>
-  $(document).ready(function () {
-    $('#tablaHistorial').DataTable({
-      responsive: true,
-      ajax: '/srpradio/src/php/get_historial.php',
-      columns: [
-        { data: 'id_promocionales' },
-        { data: 'nombre_cliente_empresa' },
-        { data: 'nombre_video' },
-        { data: 'tiempo_duracion_seg' },
-        { data: 'fecha_inicial' },
-        { data: 'fecha_final' },
-        { data: 'veces_x_dia' },
-        { data: 'dias_excluidos' },
-        { data: 'total_publicaciones' },
-        { data: 'ruta_video' },
-        { data: 'comentarios' },
-        { data: 'es_urgente', render: data => data == 1 ? 'Sí' : 'No' },
-        { data: 'fecha_registro' }
-      ],
-      language: {
-        url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/es-ES.json'
-      }
-    });
-  });
-</script>
 
 </body>
 </html>

@@ -58,4 +58,8 @@ header('Content-Type: application/xml');
 header('Content-Disposition: attachment; filename="programacion_' . $fecha . '.xml"');
 
 echo $xml->asXML();
+<<<<<<< HEAD
 ?>
+=======
+?>
+>>>>>>> c6c3fce7342faee53ae9d86d0dc240322a7e5e01
